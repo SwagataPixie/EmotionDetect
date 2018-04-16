@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container-fluid
+    .row
+      .col-md-8#affdex_elements(style="width:680px;height:480px;")
+      .col-md-4
+        #emotion-tracking-results(style="height:25em;")
+          strong EMOTION TRACKING RESULTS
+          #results(style="word-wrap:break-word;")
+        #detector-log-messages
+          strong DETECTOR LOG MSGS
+        #logs
+    #control
+      button#start(onclick='onStart()') Start
+      button#stop(onclick='onStop()') Stop
+      h3 Affectiva JS SDK CameraDetector to track different emotions.
+      p
+        | strong Instructions <br/>
+        | Press the start button to start the detector. <br/>
+        | When a face is detected, the probabilities of the different emotions are written to the DOM. <br/>
+        | Press the stop button to end the detector. <br/>
+
+  script(type="text/javascript"  src="https://code.jquery.com/jquery-3.2.1.js")
+  script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+  script(src="https://download.affectiva.com/js/3.2/affdex.js")
+  script(type="text/javascript" src="/javascripts/test.js")
